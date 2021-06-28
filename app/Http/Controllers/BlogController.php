@@ -8,7 +8,7 @@ use App\Models\Post;
 class BlogController extends Controller
 {
    public function index(){
-       $post = Post::all();
+       $posts = Post::all();
        return view('pages.home', compact('posts'));
    }
 
