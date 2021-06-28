@@ -8,9 +8,10 @@
                 <h2 class="post-title">{{$post->title}}</h2>
                 <h3 class="post-subtitle">{{$post->content}}</h3>
             </a>
+            <a href="post/{{$post->id}}" class="btn btn-primary">Skaityti daugiau...></a>
             <p class="post-meta">
                 Posted by
-                <a href="#!">Start Bootstrap</a>
+                <a href="#!">Rasa</a>
                 on September 24, 2021
             </p>
         </div>

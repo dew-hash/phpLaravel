@@ -9,7 +9,6 @@ class BlogController extends Controller
 {
    public function index(){
        $post = Post::all();
-        //dd($psots);
        return view('pages.home', compact('posts'));
    }
 
@@ -23,5 +22,10 @@ class BlogController extends Controller
            'content' => request('content')
        ]);
        return redirect('/');
+   }
+
+   public function show(Post $post){
+       return view('pages.show-post', compact('post'));
+
    }
 }

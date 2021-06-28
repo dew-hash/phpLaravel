@@ -17,3 +17,4 @@ use App\Http\Controllers\BlogController;
 Route::get('/', [BlogController::class, 'index']);
 Route::get('/add-post', [BlogController::class, 'createPost']);
 Route::post('/store', [BlogController::class, 'store']);
+Route::post('/post/{post}', [BlogController::class, 'show']);
