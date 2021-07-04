@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,12 @@ use App\Http\Controllers\BlogController;
 Route::get('/', [BlogController::class, 'index']);
 Route::get('/add-post', [BlogController::class, 'createPost']);
 Route::post('/store', [BlogController::class, 'store']);
-Route::post('/post/{post}', [BlogController::class, 'show']);
+Route::get('/post/{post}', [BlogController::class, 'show']);
+Route::get('/delete/{post}', [BlogController::class, 'destroy']);
+Route::get('/update/{post}', [BlogController::class, 'update']);
+Route::patch('/storeupdate/{post}', [BlogController::class, 'storeUpdate']);
+Route::post('/post/{post}/comment', [CommentController::class, 'addComment']);
+
+Auth::routes();
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

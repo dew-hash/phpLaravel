@@ -3,15 +3,16 @@
 <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
     @include('_partials/errors')
-        <form action="store" method="post">
-        {{csrf_field()}}
+        <form action="storeupdate/{{$post->id}}" method="post">
+            {{csrf_field()}}
+            {{method_field('PATCH')}}
             <div class="form-group">
-                <label for="title">Įrašo pavadinimas</label>
-                <input type="text" name="title" class="form-control" id="exampleInputPassword1" placeholder="">
+                <label for="title">Straipasnio pavadinimas</label>
+                <input type="text" name="title" class="form-control" id="exampleInputPassword1" placeholder="" value="{{$post->title}}">
             </div>
             <div class="form-group">
-                <label for="content">Įrašo turinys</label>
-                <textarea name="content" class="form-control" id="content" rows="3"></textarea>
+                <label for="content">Straipsnio turinys</label>
+                <textarea name="content" class="form-control" id="content" rows="3">{{$post->content}}</textarea>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Pasirinkite failą</label>
